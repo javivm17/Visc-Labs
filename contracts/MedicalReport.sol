@@ -6,6 +6,8 @@ contract MedicalReport {
     constructor () {
         registerPatient("77939030B", "Javier Vilarino", "Plza Virgen de la Amargura", 638824971, "jvilarinno@us.es",
             21, "M", "0+", "El paciente tiene alergia a los acaros");
+        registerPatient("77939030A", "Manuel Luis", "Calle Tejares", 638824971, "jvilarinno@us.es",
+            43, "M", "0+", "No procede");
     }
     
     struct Patient {
@@ -53,5 +55,8 @@ contract MedicalReport {
             );
             patientCounter++;
         }
-
+    
+    function deletePatient(uint _id) public {
+        delete patients[_id];
+    }
 }

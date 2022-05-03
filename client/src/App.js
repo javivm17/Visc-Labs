@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import LoadEthereum from "./components/LoadEthereum";
 import { useState } from "react";
+import { getNumberOfPatients, getPatient, getAllPatients, registerPatient, deletePatient } from "./ContractConnect";
 
 function App () {
   
@@ -11,13 +12,26 @@ function App () {
   /*This is an example of how to use the contract when it is loaded*/
   useEffect(() => {
     if (contract!=null){
-      getNumber().then(res => {setValue(res)})
+      /*Example of how to get the number of patients*/
+      getNumberOfPatients(contract).then(result => {
+        setValue(result);
+      })
+      
+      /*Example of how to get all patients*/
+      getAllPatients(contract).then(result => {
+        console.log(result);
+      })
+
+      /*Example of how to register a patient*/
+      let patient = ["22345782B", "Enrique Aparicio", "Calle Villanueva",544234761, "enrique@gmail.es", 35, "M", "0-", "No procede"];
+      registerPatient(contract, account, patient)  
+
+      /*Example of how to delete a patient*/
+      deletePatient(contract, account, 0)
     }
+
     // eslint-disable-next-line react-hooks/exhaustive-deps
   } , [contract]);
-  const getNumber = async () => {
-    return await contract.methods.get().call();
-  }
 
   return (
     <div className="App">

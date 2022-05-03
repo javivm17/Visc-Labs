@@ -1,6 +1,6 @@
 import React from "react";
 import Web3 from "web3";
-import SimpleStorage from "../contracts/SimpleStorage.json";
+import MedicalReport from "../contracts/MedicalReport.json";
 
 const LoadEthereum = ({setAccount,account, setContract, contract, }) => {
 
@@ -13,9 +13,9 @@ const LoadEthereum = ({setAccount,account, setContract, contract, }) => {
      
             /*This is for loading the contract*/
             const networkId = await web3.eth.net.getId();
-            const deployedNetwork = SimpleStorage.networks[networkId];
+            const deployedNetwork = MedicalReport.networks[networkId];
             const instance = new web3.eth.Contract(
-                SimpleStorage.abi,
+                MedicalReport.abi,
                 deployedNetwork && deployedNetwork.address,
               );
             setContract(instance)
