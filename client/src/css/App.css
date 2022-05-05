@@ -1,3 +1,19 @@
-body {
-    background-color: #4f4e4e
+html {
+    background: linear-gradient(#45464e, transparent);
+    background-color: #181818;
+    height: 100%;
+    width: 100%;
+}
+
+html body {
+    background: linear-gradient(#45464e, transparent);
+    background-color: #181818;
+    height: 100%;
+    width: 100%;
+}
+
+#patients {
+    position: absolute;
+    top: 65px;
+    color: white;
 }
