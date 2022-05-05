@@ -20,17 +20,18 @@ function App() {
         setValue(result);
       })
       
-      /*Example of how to get all patients*/
+      /*Example of how to get all patients
       getAllPatients(contract).then(result => {
         console.log(result);
       })
 
-      /*Example of how to register a patient*/
+      Example of how to register a patient
       let patient = ["22345782B", "Enrique Aparicio", "Calle Villanueva",544234761, "enrique@gmail.es", 35, "M", "0-", "No procede"];
       registerPatient(contract, account, patient)  
 
-      /*Example of how to delete a patient*/
+      Example of how to delete a patient
       deletePatient(contract, account, 0)
+      */
     }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
