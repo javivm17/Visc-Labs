@@ -9,8 +9,7 @@ const LoadEthereum = ({ setAccount, account, setContract, contract }) => {
     const loadEthereum = async () => {
         if (window.ethereum) {
             const web3 = new Web3(window.ethereum);
-            await window.ethereum.enable();
-            const accounts = await web3.eth.getAccounts();
+            const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
             setAccount(accounts[0])
 
             /*This is for loading the contract*/

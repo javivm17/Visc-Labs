@@ -27,3 +27,7 @@ export async function registerPatient(contract, account, patient) {
 export async function deletePatient(contract, account, id) {
     await contract.methods.deletePatient(id).send({ from: account })
 }
+
+export async function updatePatient(contract, account, patient) {
+    await contract.methods.updatePatient(...patient).send({ from: account })
+}

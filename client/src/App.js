@@ -1,10 +1,11 @@
 import React, { useEffect } from "react";
 import LoadEthereum from "./components/LoadEthereum";
 import { useState } from "react";
-import { getNumberOfPatients } from "./ContractConnect";
+import { getNumberOfPatients, updatePatient } from "./ContractConnect";
 import "./css/App.css";
 import PatientsList from "./components/PatientsList";
 import { AddPatient } from "./components/AddPatient";
+import { Button } from "primereact/button";
 
 function App() {
 
@@ -35,6 +36,11 @@ function App() {
     }
   }, [contract]);
 
+  const editPatient = () => {
+    let patientEdited = [1,"22345782B", "Javier Martinez", "Calle Villanueva",544234761, "enrique@gmail.es", 35, "M", "0-", "No procede"];
+    updatePatient(contract, account, patientEdited)
+  }
+
   return (
     <>
       <span id="patients">Número de pacientes: {value ? value : 0}</span>
@@ -46,6 +52,8 @@ function App() {
       />
       <AddPatient></AddPatient>
       <PatientsList contract={contract} account={account}></PatientsList>
+      
+      <Button onClick={()=>editPatient()}>Editar</Button>
     </>
   )
 }

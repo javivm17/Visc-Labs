@@ -59,4 +59,28 @@ contract MedicalReport {
     function deletePatient(uint _id) public {
         delete patients[_id];
     }
+
+    function updatePatient(
+        uint _id,
+        string memory _nif, 
+        string memory _fullname,
+        string memory _patientAddress,
+        uint _phone,
+        string memory _email,
+        uint _age,
+        string memory _genre,
+        string memory _bloodGroup,
+        string memory _alergias) public {
+            Patient storage patient = patients[_id];
+            patient.nif = _nif;
+            patient.fullname = _fullname;
+            patient.patientAddress = _patientAddress;
+            patient.phone = _phone;
+            patient.email = _email;
+            patient.age = _age;
+            patient.genre = _genre;
+            patient.bloodGroup = _bloodGroup;
+            patient.alergias = _alergias;
+        }
+
 }
