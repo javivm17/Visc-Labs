@@ -2,9 +2,12 @@ import React, { useEffect } from "react";
 import LoadEthereum from "./components/LoadEthereum";
 import { useState } from "react";
 import { getNumberOfPatients, getPatient, getAllPatients, registerPatient, deletePatient } from "./ContractConnect";
+import "./css/App.css";
+import PatientsList from "./components/PatientsList";
+import { Actions } from "./components/Actions";
 
-function App () {
-  
+function App() {
+
   const [account, setAccount] = useState(null);
   const [contract, setContract] = useState(null);
   const [value, setValue] = useState(null);
@@ -34,16 +37,17 @@ function App () {
   } , [contract]);
 
   return (
-    <div className="App">
-      <h1>Visc-Labs</h1>
+    <>
+      {value}
       <LoadEthereum
-        setAccount={setAccount} 
+        setAccount={setAccount}
         setContract={setContract}
         account={account}
         contract={contract}
       />
-      <p>The number which is almacenated is: {value}</p>
-    </div>
+      <Actions></Actions>
+      <PatientsList></PatientsList>
+    </>
   )
 }
 
