@@ -56,7 +56,7 @@ export const AddPatient = ({ contract, account, addPat, setAddPat }) => {
     return (
         <>
             <Toast ref={toast} />
-            <Button icon="pi pi-plus" id="add-button" className="p-button-rounded" onClick={() => { setAddDialog(true); setSubmitted(false) }} />
+            <Button icon="pi pi-plus" id="add-button" className="mt-5 p-button-rounded" onClick={() => { setAddDialog(true); setSubmitted(false) }} />
             <Dialog visible={addDialog} style={{ width: '650px' }} header="Añadir paciente" modal className="p-fluid" onHide={() => setAddDialog(false)} footer={patientDialogFooter}>
                 <div className="field">
                     <label htmlFor="nif">DNI</label>
