@@ -12,6 +12,7 @@ function App() {
   const [account, setAccount] = useState(null);
   const [contract, setContract] = useState(null);
   const [value, setValue] = useState(null);
+  const [addPat, setAddPat] = useState(false);
 
   /*This is an example of how to use the contract when it is loaded*/
   useEffect(() => {
@@ -37,7 +38,7 @@ function App() {
   }, [contract]);
 
   const editPatient = () => {
-    let patientEdited = [1,"22345782B", "Javier Martinez", "Calle Villanueva",544234761, "enrique@gmail.es", 35, "M", "0-", "No procede"];
+    let patientEdited = [1, "22345782B", "Javier Martinez", "Calle Villanueva", 544234761, "enrique@gmail.es", 35, "M", "0-", "No procede"];
     updatePatient(contract, account, patientEdited)
   }
 
@@ -50,10 +51,9 @@ function App() {
         account={account}
         contract={contract}
       />
-      <AddPatient></AddPatient>
-      <PatientsList contract={contract} account={account}></PatientsList>
-      
-      <Button onClick={()=>editPatient()}>Editar</Button>
+      <AddPatient contract={contract} account={account} addPat={addPat} setAddPat={setAddPat}></AddPatient>
+      <PatientsList contract={contract} account={account} addPat={addPat}></PatientsList>
+      <Button onClick={() => editPatient()}>Editar</Button>
     </>
   )
 }

@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 import { getAllPatients, deletePatient } from "../ContractConnect";
 import logo from "../images/logo.png";
 
-export default function PatientsList({ contract, account }) {
+export default function PatientsList({ contract, account, addPat }) {
     const [patients, setPatients] = useState([]);
     const [patientDialog, setPatientDialog] = useState(false);
     const [patient, setPatient] = useState({});
@@ -19,7 +19,7 @@ export default function PatientsList({ contract, account }) {
             }
             )
         }
-    }, [contract, deletePat]);
+    }, [contract, deletePat, addPat]);
 
     const patientDetails = (patient) => {
         setPatientDialog(true);
