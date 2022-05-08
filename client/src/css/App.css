@@ -1,0 +1,37 @@
+html {
+    background: linear-gradient(#45464e, transparent);
+    background-color: #181818;
+    height: 100%;
+    width: 100%;
+}
+
+html body {
+    background: linear-gradient(#45464e, transparent);
+    background-color: #181818;
+    height: 100%;
+    width: 100%;
+}
+
+#patients {
+    position: absolute;
+    top: 65px;
+    color: white;
+}
+
+.patient-number{
+    background-color: #81D4FA;
+    margin-bottom: 5px;
+    display: flex;
+    justify-content: center;
+}
+
+.patient-number > p {
+    line-height: 0rem;
+    
+}
+
+h4{
+    color: black !important;
+    width: 100%;
+    vertical-align:middle
+}
